@@ -8,19 +8,21 @@ do
             echo "Number of CPU Cores : `lscpu | grep 'CPU(s):'| head -n 1 | awk  '{print $2}'`"
             ;;
         "2. Disk space")
-            echo "`df |  grep / | awk '{ print $4}' |paste -sd+|bc`/1000000" | bc
+            #echo `df |  grep / | awk '{ print $4/1000000}' |paste -sd+ | bc`
+            echo "`df |  grep / | awk '{ print $4}' |paste -sd+|bc`" /1000000 | bc
             ;;
         "3. Size of RAM")
-            echo "you chose choice $REPLY which is $opt"
+            echo "Size of ram in MB : `free -m | grep 'Mem:' | awk '{print $2}'`"
             ;;
         "4. Last login user")
-            echo "you chose choice 2"
+            echo "Last logins : 
+            `last --fullnames`"
             ;;
-        "5. Active proces")
-            echo "you chose choice 2"
+        "5. Active process")
+            echo "Active processes : `ps -aux | wc -l`"
             ;;
-        "O6. Send raprot  on email")
-            echo "you chose choice 2"
+        "O6. Send raport  on email")
+            echo "email-problem"
             ;;
         "Quit")
             break
