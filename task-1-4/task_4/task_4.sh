@@ -1,6 +1,6 @@
 #!/bin/bash
 PSO='Please enter your option: '
-options=("1. Number of CPU Cores" "2. Disk space" "3. Size of RAM"  "4. Last login user" "5. Active process" "6. Send raprot  on email" "Quit")
+options=("1. Number of CPU Cores" "2. Disk space" "3. Size of RAM"  "4. Last login user" "5. Active process" "6. Send raprot on email" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
